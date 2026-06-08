@@ -1,29 +1,90 @@
 {
   "expo": {
-    "name": "vehicleTrackingPassenger",
+    "name": "RideTrack",
     "slug": "vehicleTrackingPassenger",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "newArchEnabled": true,
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "com.PassengerTracking",
+      "buildNumber": "1",
+      "config": {
+        "googleMapsApiKey": "AIzaSyBHwBCfRjdRCfrC5Ljwf_IC-3hdkKCyMSE"
+      },
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "location"
+        ],
+        "NSLocationWhenInUseUsageDescription": "Allow RideTrack to use your location.",
+        "NSLocationAlwaysUsageDescription": "Allow RideTrack to use your location."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "permissions": [
+        "INTERNET",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "FOREGROUND_SERVICE",
+        "WAKE_LOCK",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_BACKGROUND_LOCATION",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.FOREGROUND_SERVICE_LOCATION"
+      ],
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyDPhvbjaLiLZNlNs8RK_l95tv-KI5pKSLc"
+        }
+      },
+      "package": "com.PassengerTracking"
     },
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#ffffff"
+        }
+      ],
+      "expo-font",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow RideTrack to use your location.",
+          "locationAlwaysPermission": "Allow RideTrack to use your location.",
+          "locationWhenInUsePermission": "Allow RideTrack to use your location.",
+          "isIosBackgroundLocationEnabled": true,
+          "isAndroidBackgroundLocationEnabled": true
+        }
+      ]
+    ],
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "owner": "areshbalabis",
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/bddfc2f4-87a2-4910-8f26-076af3f1731e"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "bb3b44dc-1f1f-4563-8e7d-64475f12db7a"
+      }
     }
   }
 }
