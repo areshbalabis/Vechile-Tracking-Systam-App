@@ -1,29 +1,75 @@
 {
   "expo": {
-    "name": "DriversVehicle",
+    "name": "VehiclePilot",
     "slug": "DriversVehicle",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "newArchEnabled": true,
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "com.aton123.DriversVehicle",
+      "buildNumber": "1",
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "location"
+        ],
+        "NSLocationWhenInUseUsageDescription": "This app needs your location while using the app to update trips in real-time.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "This app requires background location access to continue tracking even when the app is closed or in the background.",
+        "NSLocationAlwaysUsageDescription": "We use your location even when the app is closed to track trips and share updates."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "INTERNET",
+        "FOREGROUND_SERVICE",
+        "WAKE_LOCK",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_BACKGROUND_LOCATION",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.FOREGROUND_SERVICE_LOCATION"
+      ],
+      "package": "com.aton123.DriversVehicle"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow DriversVehicle to access your location in the background so passengers can see your live position.",
+          "isAndroidBackgroundLocationEnabled": true
+        }
+      ],
+      "expo-navigation-bar",
+      "expo-font"
+    ],
+    "owner": "areshbalabis",
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/5d84005c-c4d8-4ed4-9b57-cf574df061df"
+    },
+    "extra": {
+      "expo-navigation-bar": {},
+      "eas": {
+        "projectId": "d976d2ae-84cf-42b0-b117-bfec82e3bdab"
+      }
     }
   }
 }
